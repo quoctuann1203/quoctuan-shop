@@ -752,7 +752,7 @@
     padding-left: 0;
     list-style: none;
     /* vh : view port height */
-    height: 56vh;
+    max-height: 56vh;
     overflow-y: auto;
 }
 
@@ -863,6 +863,36 @@
     font-size: 1 rem;
     display: block;
 }
+
+/* Header sort bar */
+.header__sort-bar {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+}
+
+
+
 
 /* App Container */
 .app__container {
