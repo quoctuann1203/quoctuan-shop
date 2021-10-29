@@ -1,10 +1,6 @@
 /* Mobile & Tablet */
 @media (max-width: 1023px) {
-  :root {
-    --header-height: 68px;
-    --navbar-height: 0px;
-    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
-  }
+  
   .hide-on-mobile-tablet {
     display: none;
   }
@@ -34,14 +30,26 @@
   .header__sort-bar {
     display: flex;
   }
+  .mobile-category {
+    display: block;
+  }
 }
 
 /* Tablet */
+
+
+
 @media (min-width: 740px) and (max-width: 1023px) {
+  :root {
+    --header-height: 68px;
+    --navbar-height: 0px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+  }
+
   .hide-on-tablet {
     display: none;
   }
-
+  
   .header__cart {
     width: 74px;
     text-align: right;
@@ -50,9 +58,16 @@
 
 
 /* Mobile */
+
 @media (max-width: 739px) {
   .hide-on-mobile {
     display: none;
+  }
+
+  :root {
+    --header-height: 54px;
+    --navbar-height: 0px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
   }
 
   .app__content {
@@ -79,7 +94,18 @@
     animation: mobileSearchSideIn linear 0.3s;
     display: none;
   }
-
+  
+    @keyframes mobileSearchSideIn {
+      from {
+        opacity: 0;
+        top: calc(var(--header-height) / 2);
+      }
+      to {
+        opacity: 1;
+        top: var(--header-height);
+      }
+    }
+  
   .header__search-history {
     position: fixed;
     width: 100%;
@@ -97,16 +123,33 @@
     font-size: 1.2rem;
     min-width: 24px;
   }
-
-  @keyframes mobileSearchSideIn {
-    from {
-      opacity: 0;
-      top: calc(var(--header-height) / 2);
-    }
-    to {
-      opacity: 1;
-      top: var(--header-height);
-    }
+  
+  .header__mobile-search {
+    display: block;
   }
   
+  .header__logo-img {
+    width: 130px;
+  }
+
+  .footer__content {
+    padding: 0 16px;
+  }
+
+  .footer__heading {
+    text-align: center;
+  }
+
+  .footer-item__link,.footer__download {
+    justify-content: center;
+  }
+
+  .footer__download-apps {
+    flex: unset;
+  }
+
+  .footer__download-apps-link {
+    display: block;
+    padding: 8px;
+  }
 }
